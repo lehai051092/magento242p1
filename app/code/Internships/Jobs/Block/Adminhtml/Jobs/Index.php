@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Internships\Jobs\Block\Adminhtml\Jobs;
 
+use Magento\Framework\Phrase;
 use Magento\Framework\View\Element\Template;
 
 class Index extends Template
@@ -20,10 +21,10 @@ class Index extends Template
     }
 
     /**
-     * @return string
+     * @return Phrase
      */
-    public function getText(): string
+    public function getText(): Phrase
     {
-        return 'Hello';
+        return __('Hello');
     }
 }
