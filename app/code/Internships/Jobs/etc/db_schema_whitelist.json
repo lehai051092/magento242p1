@@ -1,0 +1,33 @@
+{
+    "internships": {
+        "column": {
+            "internship_id": true,
+            "first_name": true,
+            "last_name": true,
+            "age": true,
+            "job_id": true
+        },
+        "index": {
+            "INTERNSHIPS_FIRST_NAME": true,
+            "INTERNSHIPS_LAST_NAME": true,
+            "INTERNSHIPS_JOB_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "internships_jobs": {
+        "column": {
+            "job_id": true,
+            "job_name": true,
+            "number_of_recruits": true
+        },
+        "index": {
+            "INTERNSHIPS_JOBS_JOB_NAME": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "INTERNSHIPS_JOBS_JOB_ID_INTERNSHIPS_JOB_ID": true
+        }
+    }
+}

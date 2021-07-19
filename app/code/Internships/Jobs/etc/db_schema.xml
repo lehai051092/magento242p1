@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="internships" resource="default" engine="innodb" comment="Internships Table">
+        <column xsi:type="int" name="internship_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Internship ID"/>
+        <column xsi:type="varchar" name="first_name" nullable="false" length="32" default="simple" comment="First Name"/>
+        <column xsi:type="varchar" name="last_name" nullable="false" length="32" default="simple" comment="Last Name"/>
+        <column xsi:type="int" name="age" nullable="false" padding="3" comment="Age"/>
+        <column xsi:type="int" name="job_id" nullable="true" padding="10" unsigned="true" comment="Job ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="internship_id"/>
+        </constraint>
+        <index referenceId="INTERNSHIPS_FIRST_NAME" indexType="btree">
+            <column name="first_name"/>
+        </index>
+        <index referenceId="INTERNSHIPS_LAST_NAME" indexType="btree">
+            <column name="last_name"/>
+        </index>
+        <index referenceId="INTERNSHIPS_JOB_ID" indexType="btree">
+            <column name="job_id"/>
+        </index>
+    </table>
+    <table name="internships_jobs" resource="default" engine="innodb" comment="Internships Table">
+        <column xsi:type="int" name="job_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="job ID"/>
+        <column xsi:type="varchar" name="job_name" nullable="false" length="32" default="simple" comment="Job Name"/>
+        <column xsi:type="smallint" name="number_of_recruits" nullable="false" padding="5" default="0" unsigned="true" comment="Number of Recruits"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="job_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="FOREIGN_KEY_WITH_INTERNSHIPS"
+                    table="internships_jobs" column="job_id" referenceTable="internships"
+                    referenceColumn="job_id" onDelete="CASCADE"/>
+        <index referenceId="INTERNSHIPS_JOBS_NAME" indexType="btree">
+            <column name="job_name"/>
+        </index>
+    </table>
+</schema>
