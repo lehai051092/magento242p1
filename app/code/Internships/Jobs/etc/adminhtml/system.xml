@@ -19,6 +19,15 @@
                     <label>Using for customers</label>
                     <source_model>Internships\Jobs\Model\Config\Source\CheckCustomers</source_model>
                 </field>
+                <field id="color_example" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <frontend_model>Internships\Jobs\Block\Adminhtml\Color</frontend_model>
+                </field>
+                <field id="report" translate="label" sortOrder="5" showInDefault="1">
+                    <label>Report</label>
+                    <frontend_model>Internships\Jobs\Block\Adminhtml\Report</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
             </group>
         </section>
     </system>
