@@ -5,7 +5,7 @@
     </head>
     <body>
         <referenceContainer name="content">
-            <block class="Internships\Jobs\Block\Jobs\Index" name="internships_index" template="Internships_Jobs::jobs/index.phtml" />
+            <block class="Internships\Jobs\Block\Adminhtml\Jobs\Index" name="internships_index" template="Internships_Jobs::jobs/index.phtml" />
         </referenceContainer>
     </body>
 </page>

@@ -2,8 +2,8 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add id="Internships_Jobs::jobs" title="Internships" module="Internships_Jobs" sortOrder="41" resource="Internships_Jobs::menu"/>
-        <add id="Internships_Jobs::parent" title="ViMagento Post" module="Internships_Jobs" sortOrder="10" resource="Internships_Jobs::menu" parent="Internships_Jobs::jobs"/>
-        <add id="Internships_Jobs::controllers" title="Manage controllers" module="Internships_Jobs" sortOrder="10" action="internships/jobs/index" resource="Internships_Jobs::controllers" parent="Internships_Jobs::parent"/>
+        <add id="Internships_Jobs::parent" title="Internships Parent" module="Internships_Jobs" sortOrder="10" resource="Internships_Jobs::menu" parent="Internships_Jobs::jobs"/>
+        <add id="Internships_Jobs::controllers" title="Manage jobs" module="Internships_Jobs" sortOrder="10" action="internships/jobs/index" resource="Internships_Jobs::controllers" parent="Internships_Jobs::parent"/>
         <add id="Internships_Jobs::configuration" title="Configuration" module="Internships_Jobs" sortOrder="20" parent="Internships_Jobs::parent" action="adminhtml/system_config" resource="Internships_Jobs::configuration"/>
     </menu>
 </config>
