@@ -8,6 +8,8 @@ use Magento\Backend\App\Action;
 
 class Index extends Action
 {
+    const ADMIN_RESOURCE = 'Internships_Jobs::controllers';
+
     /**
      * @var PageFactory
      */
